@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxit Couriers</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 2rem;
+            color: #007bff !important;
+            letter-spacing: 1px;
+            padding-right: 2rem;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .dropdown-toggle {
+            font-weight: bold !important;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            color: #212529 !important;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            transition: color 0.2s;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:focus,
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .dropdown-item:hover {
+            color: #007bff !important;
+        }
+
+
+        @media (max-width: 767.98px) {
+            footer .container>.row {
+                text-align: center !important;
+            }
+
+            footer .container>.row>div {
+                margin: 0 auto !important;
+                float: none !important;
+                display: block !important;
+                max-width: 320px;
+                /* optional max width for better appearance */
+            }
+
+            footer .container>.row>div.text-md-start {
+                text-align: center !important;
+            }
+
+            footer .container>.row>div.text-center {
+                text-align: center !important;
+            }
+        }
+
+
+        @media (max-width: 991.98px) {
+            .navbar-brand span {
+                font-size: 1.3rem !important;
+                /* or even 0.9rem if needed */
+            }
+        }
+
+        .section-header {
+            background-color: #FFA500;
+            padding: 40px;
+            margin: 1%;
+            text-align: center;
+        }
+
+        .section-header h1 {
+            color: #fff;
+            font-weight: 900;
+            font-size: 2rem;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-image {
+            flex: 1 1 350px;
+            max-width: 480px;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.09);
+            object-fit: cover;
+        }
+
+        .content-text {
+            flex: 1 1 350px;
+            max-width: 480px;
+        }
+
+        .content-title {
+            font-size: 2.1rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #222;
+        }
+
+        .content-subtitle {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            line-height: 1.15;
+            color: #222;
+        }
+
+        .content-description {
+            font-size: 1.17rem;
+            line-height: 1.7;
+            color: #444;
+            margin: 0;
+            text-align: justify;
+        }
+
+        @media (max-width: 991px) {
+            .section-header {
+                padding: 20px 0 20px 0;
+            }
+
+            .section-header h1 {
+                font-size: 1.3rem;
+            }
+
+            .content-container {
+                padding: 0 16px;
+            }
+
+            .content-title {
+                font-size: 1.7rem;
+            }
+
+            .content-subtitle {
+                font-size: 2rem;
+            }
+
+            .content-image,
+            .content-text {
+                max-width: 100%;
+                flex: 1 1 100%;
+                margin-bottom: 24px;
+                /* space between stacked blocks */
+                padding: 10px;
+                text-align: justify;
+            }
+
+            .content-image img {
+                max-width: 90vw;
+                /* prevent touching edges */
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+        }
+
+        .get-started-section {
+            background: #FFA500;
+            /* yellow with some transparency */
+            border-radius: 18px;
+            max-width: 70vw;
+            margin: 10px auto;
+            padding: 56px 48px 44px 48px;
+            box-sizing: border-box;
+            position: relative;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+            min-height: 300px;
+        }
+
+        .get-started-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .get-started-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #181818;
+            margin-bottom: 32px;
+        }
+
+        .get-started-desc {
+            font-size: 1rem;
+
+            color: #181818;
+        }
+
+        @media (max-width:800px) {
+            .get-started-section {
+                max-width: 90vw;
+            }
+
+            .get-started-title {
+                font-size: 1.7rem;
+            }
+
+            .get-started-desc {
+                font-size: 1.1rem;
+                text-align: justify;
+            }
+        }
+
+        .content-underline {
+            width: 72px;
+            height: 5px;
+            background-color: #e0592a;
+            /* Orange shade similar to the line in your image */
+            margin: 18px 0 28px 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 36px;
+            max-width: 1350px;
+            margin: 40px auto;
+            margin-top: 200px;
+            margin-bottom: 100px;
+            padding: 0 16px;
+        }
+
+        .service-card {
+            background: #ffd000;
+            border-radius: 18px;
+            box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
+            padding: 42px 28px 26px 28px;
+            min-height: 190px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            transition: box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .service-text {
+            font-size: 1.35rem;
+            font-family: 'Arial', sans-serif;
+            color: #222;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        @media (max-width: 800px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+                margin-top: 20px;
+                /* align-items: center; */
+            }
+
+            .service-card {
+                padding: 50px;
+                align-items: center;
+            }
+
+            .service-icon {
+                width: 56px;
+                height: 56px;
+            }
+
+            .service-text {
+                font-size: 1.10rem;
+            }
+        }
+
+        .features-section {
+            width: 100%;
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 150px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 38px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px 28px 16px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 0 16px 28px 16px;
+            box-shadow: 0 7px 0 0 #1111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 5px solid #111;
+            min-height: 360px;
+            justify-content: flex-start;
+        }
+
+        .feature-icon {
+            width: 110px;
+            height: 110px;
+            margin: 36px 0 24px 0;
+        }
+
+        .feature-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e43d3d;
+            margin-bottom: 16px;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .feature-desc {
+            font-size: 1.16rem;
+            color: #222;
+            text-align: center;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        @media (max-width: 920px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .feature-card {
+                min-height: 220px;
+                padding: 0 9px 18px 9px;
+            }
+
+            .feature-title {
+                font-size: 1.37rem;
+            }
+
+            .feature-desc {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER - Modified Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: white;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="Logo.jpg" alt="Boxit Couriers Logo" width="80" height="70" style="border-radius: 7px;">
+                <span class="ms-3"
+                    style="color: #0b3d91; font-weight: bold; font-size: 1.8rem;  font-family: 'Segoe UI', Arial, sans-serif;">
+                    Boxit Couriers</span>
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav fw-semibold">
+                    <li class="nav-item"><a class="nav-link text-white " href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white active" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Track.html">Track Order</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Contact.html">Contact</a></li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-header">
+        <h1>Services</h1>
+    </section>
+
+
+    <section class="content-container">
+        <div class="content-text">
+
+            <div class="content-subtitle">International Courier Services by Boxit Couriers</div>
+            <div class="content-underline"></div>
+            <p class="content-description">
+                Boxit Couriers is a leading provider of international courier solutions, offering a robust global
+                network for both individuals and businesses. Our extensive reach allows you to send documents, parcels,
+                and bulk cargo safely and efficiently to destinations around the world.​
+
+                We specialize in express international deliveries, fast air-freight solutions, and exclusive global gift
+                delivery services in select markets. Our commitment to reliability, transparency, and customer
+                satisfaction has made us a trusted name in the international courier industry
+            </p>
+        </div>
+        <div class="content-image">
+            <img src="6.jpg" alt="Courier handing parcel" />
+        </div>
+
+    </section>
+
+    <section class="content-container">
+        <div class="content-image">
+            <img src="5.jpg" alt="Courier handing parcel" />
+        </div>
+        <div class="content-text">
+
+            <div class="content-subtitle">Bringing Andhra's Authentic Flavors to the World</div>
+            <div class="content-underline"></div>
+            <p class="content-description">
+                At Boxit Couriers, we go beyond traditional shipping—we deliver a taste of heritage, care, and
+                tradition. Alongside our trusted international delivery services, we proudly ship authentic Andhra food
+                products worldwide. From signature sweets and spicy pickles (veg & non-veg) to flavorful snacks and
+                aromatic masala powders, every item is crafted under our in-house brand with a commitment to quality.
+                Each product is made in small batches for maximum
+                freshness and packed with the goodness of homemade cooking. With secure packaging, easy ordering, and
+                fast international delivery, Boxit Couriers makes it simple for you to enjoy a taste of home, wherever
+                you are.
+
+            </p>
+        </div>
+    </section>
+
+
+    <section class="services-grid">
+        <div class="service-card">
+            <img src="7.png" alt="Food Items International" class="service-icon">
+            <div class="service-text"><b>Food Items International</b></div>
+        </div>
+        <div class="service-card">
+            <img src="8.png" alt="University Applications" class="service-icon">
+            <div class="service-text"><b>University Applications</b></div>
+        </div>
+        <div class="service-card">
+            <img src="9.png" alt="Import & Export" class="service-icon">
+            <div class="service-text"><b>Import & Export</b></div>
+        </div>
+        <div class="service-card">
+            <img src="10.png" alt="International Related Packers & Movers" class="service-icon">
+            <div class="service-text"><b>International Related Packers & Movers</b></div>
+        </div>
+        <div class="service-card">
+            <img src="11.png" alt="Excess / Unaccompanied Baggage" class="service-icon">
+            <div class="service-text"><b>Excess / Unaccompanied Baggage</b></div>
+        </div>
+        <div class="service-card">
+            <img src="12.png" alt="Cross Border E-commerce Shipments" class="service-icon">
+            <div class="service-text"><b>Cross Border E-commerce Shipments</b></div>
+        </div>
+    </section>
+
+
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="13.png" alt="International Courier" class="feature-icon">
+                <h3 class="feature-title">International Courier</h3>
+                <p class="feature-desc">
+                    It is important to consider factors such as delivery speed, reliability, coverage, pricing, tracking
+                    capabilities, customer support, and reputation of the courier company.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="14.png" alt="Safe Packaging" class="feature-icon">
+                <h3 class="feature-title">Safe Packaging</h3>
+                <p class="feature-desc">
+                    Shipments are protected during transit and arrive at their destination in good condition. Proper
+                    packaging helps prevent damage, breakage, or other harm that could occur during handling and
+                    transportation.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="15.png" alt="Fast Delivery" class="feature-icon">
+                <h3 class="feature-title">Fast Delivery</h3>
+                <p class="feature-desc">
+                    Fast delivery refers to the prompt and expedited transportation of goods or packages to their
+                    intended destination. It focuses on minimizing the transit time from sender to recipient.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="get-started-section">
+        <div class="get-started-content">
+            <h2 class="get-started-title">Ready To Get Started</h2>
+            <p class="get-started-desc">
+                Certainly! Boxit Couriers is here to assist you. Please let us know what you'd like help with, and we'll
+                do our best to provide support.
+                Whether you have a specific delivery question, need guidance on international shipping options, or
+                require details about our specialized services, feel free to reach out.
+                Our team is ready to guide you on parcels, logistics, or global connections. Let us know your needs, and
+                we can begin the process—quick, secure, and truly care-driven.
+                Boxit Couriers: Moving your world, one parcel at a time.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER START -->
+   <footer style="background: #000; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin-top: 40px;">
+        <!-- Top banner -->
+        <div style="background: #ffc107;">
+            <div class="container text-center py-3">
+                <span style="font-weight: bold; font-size: 1.5rem; color: #222;">
+                    Call us for Courier Services <a href="tel:+919515404271" style="color: inherit; text-decoration: underline;">+91 95154
+                                04271</a>
+                </span>
+            </div>
+        </div>
+        <!-- Main footer content -->
+        <div class="container py-4">
+            <div class="row align-items-start">
+                <!-- Logo -->
+                <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
+                    <!-- Replace with your Boxit Couriers logo -->
+                    <img src="Logo.jpg" alt="Boxit Couriers Logo" width="220"
+                        style="background: #fff; border-radius: 20px; padding: 8px;">
+                </div>
+                <!-- Quick Links -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h4 style="font-weight: bold;">Quick Links</h4>
+                    <ul class="list-unstyled" style="margin-top: 12px;">
+                        <li><a href="index.html" style="color:#fff;text-decoration:none;">Home</a></li>
+                        <li><a href="About.html" style="color:#fff;text-decoration:none;">About</a></li>
+                        <li><a href="Services.html" style="color:#fff;text-decoration:none;">Services</a></li>
+                        <li><a href="Track.html" style="color:#fff;text-decoration:none;">Track Order</a></li>
+                        <li><a href="Gallery.html" style="color:#fff;text-decoration:none;">Gallery</a></li>
+                        <li><a href="Contact.html" style="color:#fff;text-decoration:none;">Contact</a></li>
+
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h4 style="font-weight: bold;">Contact us</h4>
+                    <ul class="list-unstyled mt-3" style="font-size: 1.05rem;">
+                        
+                        <li>
+                            <i class="fas fa-phone-alt" style="color:#ffc107;"></i>
+                            <a href="tel:+919515404271" style="color: inherit; text-decoration: underline;">+91 95154
+                                04271</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt" style="color:#ffc107;"></i>
+                            <a href="tel:+918977822017" style="color: inherit; text-decoration: underline;">+91 89778
+                                22017</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="color:#ffc107;"></i>
+                            <a href="mailto:boxitcouriers@gmail.com"
+                                style="color: inherit; text-decoration: underline;">boxitcouriers@gmail.com</a>
+                        </li>
+                    </ul>
+                    <div style="margin-top: 8px;">
+                        <i class="fas fa-map-marker-alt" style="color:#ffc107;"></i>
+                        <a href="https://maps.app.goo.gl/RR5FboSwECpJLd7W9?g_st=aw" target="_blank"
+                            style="color: inherit; text-decoration: underline;">
+                            # 32-15-45, Vishalandhra Road, Brahmananda Reddy Nagar, Vijayawada-520003.
+                        </a>
+                    </div>
+                </div>
+                <!-- Follow Us -->
+                <div class="col-md-3 text-center text-md-start">
+                    <h4 style="font-weight: bold;">Follow us</h4>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/share/14KGq3C3yPi/" target="_blank"
+                            style="background:#ffc107;padding:10px 14px;border-radius:7px;margin-right:7px;color:#111;display:inline-block;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/boxitcouriers?igsh=ZHl1OG45ZzcwdTZ3" target="_blank"
+                            style="background:#ffc107;padding:10px 14px;border-radius:7px;margin-right:7px;color:#111;display:inline-block;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/9515404271" target="_blank"
+                            style="background:#ffc107;padding:10px 14px;border-radius:7px;margin-right:7px;color:#111;display:inline-block;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Bottom copyright -->
+        <div class="container">
+            <div class="text-center py-3" style="font-size: 1.08rem;">
+                Copyright © 2025 Boxit Couriers | Powered by Boxit Couriers
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,31 @@
             font-weight: bold;
             font-size: 2rem;
             color: #007bff !important;
+            letter-spacing: 1px;
+            padding-right: 2rem;
         }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .dropdown-toggle {
+            font-weight: bold !important;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            color: #212529 !important;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            transition: color 0.2s;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:focus,
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .dropdown-item:hover {
+            color: #007bff !important;
+        }
+
         .hero {
             background: url('https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
             height: 600px;
@@ -23,73 +48,144 @@
             justify-content: center;
             text-align: center;
         }
+
         .hero h1 {
             font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
+
         .service-card {
             transition: transform 0.3s;
         }
+
         .service-card:hover {
             transform: scale(1.05);
         }
+
         .gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
+
         .video-section {
             background: #f8f9fa;
             padding: 50px 0;
         }
+
         .video-section video {
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
             display: block;
         }
+
+        @media (max-width: 767.98px) {
+            footer .container>.row {
+                text-align: center !important;
+            }
+
+            footer .container>.row>div {
+                margin: 0 auto !important;
+                float: none !important;
+                display: block !important;
+                max-width: 320px;
+                /* optional max width for better appearance */
+            }
+
+            footer .container>.row>div.text-md-start {
+                text-align: center !important;
+            }
+
+            footer .container>.row>div.text-center {
+                text-align: center !important;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-brand span {
+                font-size: 1.3rem !important;
+                /* or even 0.9rem if needed */
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- HEADER - Modified Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand" href="#">Boxit Couriers</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav fw-semibold">
-            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#track">Track</a></li>
-            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                 data-bs-toggle="dropdown" aria-expanded="false">
-                Blogs
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Latest</a></li>
-                <li><a class="dropdown-item" href="#">Tips</a></li>
-              </ul>
-            </li>
-          </ul>
+    <nav class="navbar navbar-expand-lg" style="background-color: white;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="Logo.jpg" alt="Boxit Couriers Logo" width="80" height="70" style="border-radius: 7px;">
+                <span class="ms-3"
+                    style="color: #0b3d91; font-weight: bold; font-size: 1.8rem; letter-spacing: 1px; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Boxit Couriers
+                </span>
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav fw-semibold">
+                    <li class="nav-item"><a class="nav-link text-white  active" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Track.html">Track Order</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Contact.html">Contact</a></li>
+                   
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div>
-            <h1>Fast & Reliable Courier Services</h1>
-            <p>Delivering your parcels safely and on time.</p>
-            <button class="btn btn-primary btn-lg mt-3">Book Now</button>
+    <section class="hero-section position-relative mx-auto"
+        style="height: 80vh; max-width: 90vw; background: #16253a; border-radius:12px; overflow:hidden;margin-top: 10px;">
+        <div id="hero-bg" class="position-absolute top-0 start-0 w-100 h-100"
+            style="z-index:1; background-size: cover; background-position: center; transition: background-image 0.8s ease;">
+        </div>
+        <div class="container position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center text-white"
+            style="z-index:2;">
+            <h1 id="hero-title" class="fw-bold mb-3 display-4">Fast & Secure Delivery</h1>
+            <p id="hero-desc" class="lead">Across India & Worldwide.</p>
+            <a href="#services" class="btn btn-primary btn-lg mt-3">Book Now</a>
         </div>
     </section>
+
+    <script>
+        const images = [
+            {
+                img: "url('https://user-gen-media-assets.s3.amazonaws.com/seedream_images/ec37d148-1a12-42d9-a691-bc06b7cedeea.png')",
+                title: "Fast & Secure Delivery",
+                desc: "Across India & Worldwide."
+            },
+            {
+                img: "url('1.png')",
+                title: "International Shipments",
+                desc: "Global reach with trusted partners."
+            },
+            {
+                img: "url('2.png')",
+                title: "Real-Time Tracking",
+                desc: "Track your parcel anytime, anywhere."
+            }
+        ];
+        let index = 0;
+        function changeHero() {
+            index = (index + 1) % images.length;
+            document.getElementById('hero-bg').style.backgroundImage = images[index].img;
+            document.getElementById('hero-title').textContent = images[index].title;
+            document.getElementById('hero-desc').textContent = images[index].desc;
+        }
+        setInterval(changeHero, 3500);
+        // Initial load
+        document.getElementById('hero-bg').style.backgroundImage = images[0].img;
+    </script>
+
 
     <!-- Services Section -->
     <section id="services" class="py-5">
@@ -98,7 +194,8 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card service-card">
-                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Domestic Delivery">
+                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            class="card-img-top" alt="Domestic Delivery">
                         <div class="card-body">
                             <h5 class="card-title">Domestic Delivery</h5>
                             <p class="card-text">Fast and secure delivery across India.</p>
@@ -107,7 +204,8 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card service-card">
-                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="International Delivery">
+                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            class="card-img-top" alt="International Delivery">
                         <div class="card-body">
                             <h5 class="card-title">International Delivery</h5>
                             <p class="card-text">Global reach with reliable partners.</p>
@@ -116,7 +214,8 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card service-card">
-                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Express Delivery">
+                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            class="card-img-top" alt="Express Delivery">
                         <div class="card-body">
                             <h5 class="card-title">Express Delivery</h5>
                             <p class="card-text">Same-day and next-day delivery options.</p>
@@ -149,13 +248,16 @@
             <h2 class="text-center mb-4">Gallery</h2>
             <div class="row gallery">
                 <div class="col-md-4 mb-4">
-                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Courier Van">
+                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Courier Van">
                 </div>
                 <div class="col-md-4 mb-4">
-                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Courier Team">
+                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Courier Team">
                 </div>
                 <div class="col-md-4 mb-4">
-                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Parcel Sorting">
+                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Parcel Sorting">
                 </div>
             </div>
         </div>
@@ -195,18 +297,107 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1800000000003!2d78.474321!3d17.438000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b6b4a06cd6bb!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1800000000003!2d78.474321!3d17.438000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b6b4a06cd6bb!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Boxit Couriers. All rights reserved.</p>
+    <!-- FOOTER START -->
+   <footer style="background: #000; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin-top: 40px;">
+        <!-- Top banner -->
+        <div style="background: #ffc107;">
+            <div class="container text-center py-3">
+                <span style="font-weight: bold; font-size: 1.5rem; color: #222;">
+                    Call us for Courier Services <a href="tel:+919515404271" style="color: inherit; text-decoration: underline;">+91 95154
+                                04271</a>
+                </span>
+            </div>
+        </div>
+        <!-- Main footer content -->
+        <div class="container py-4">
+            <div class="row align-items-start">
+                <!-- Logo -->
+                <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
+                    <!-- Replace with your Boxit Couriers logo -->
+                    <img src="Logo.jpg" alt="Boxit Couriers Logo" width="220"
+                        style="background: #fff; border-radius: 20px; padding: 8px;">
+                </div>
+                <!-- Quick Links -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h4 style="font-weight: bold;">Quick Links</h4>
+                    <ul class="list-unstyled" style="margin-top: 12px;">
+                        <li><a href="Home.html" style="color:#fff;text-decoration:none;">Home</a></li>
+                        <li><a href="About.html" style="color:#fff;text-decoration:none;">About</a></li>
+                        <li><a href="Services.html" style="color:#fff;text-decoration:none;">Services</a></li>
+                        <li><a href="Track.html" style="color:#fff;text-decoration:none;">Track Order</a></li>
+                        <li><a href="Gallery.html" style="color:#fff;text-decoration:none;">Gallery</a></li>
+                        <li><a href="Contact.html" style="color:#fff;text-decoration:none;">Contact</a></li>
+
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h4 style="font-weight: bold;">Contact us</h4>
+                    <ul class="list-unstyled mt-3" style="font-size: 1.05rem;">
+                        
+                        <li>
+                            <i class="fas fa-phone-alt" style="color:#ffc107;"></i>
+                            <a href="tel:+919515404271" style="color: inherit; text-decoration: underline;">+91 95154
+                                04271</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt" style="color:#ffc107;"></i>
+                            <a href="tel:+918977822017" style="color: inherit; text-decoration: underline;">+91 89778
+                                22017</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="color:#ffc107;"></i>
+                            <a href="mailto:boxitcouriers@gmail.com"
+                                style="color: inherit; text-decoration: underline;">boxitcouriers@gmail.com</a>
+                        </li>
+                    </ul>
+                    <div style="margin-top: 8px;">
+                        <i class="fas fa-map-marker-alt" style="color:#ffc107;"></i>
+                        <a href="https://maps.app.goo.gl/RR5FboSwECpJLd7W9?g_st=aw" target="_blank"
+                            style="color: inherit; text-decoration: underline;">
+                            # 32-15-45, Vishalandhra Road, Brahmananda Reddy Nagar, Vijayawada-520003.
+                        </a>
+                    </div>
+                </div>
+                <!-- Follow Us -->
+                <div class="col-md-3 text-center text-md-start">
+                    <h4 style="font-weight: bold;">Follow us</h4>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/share/14KGq3C3yPi/" target="_blank"
+                            style="background:#ffc107;padding:10px 14px;border-radius:7px;margin-right:7px;color:#111;display:inline-block;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/boxitcouriers?igsh=ZHl1OG45ZzcwdTZ3" target="_blank"
+                            style="background:#ffc107;padding:10px 14px;border-radius:7px;margin-right:7px;color:#111;display:inline-block;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/9515404271" target="_blank"
+                            style="background:#ffc107;padding:10px 14px;border-radius:7px;margin-right:7px;color:#111;display:inline-block;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Bottom copyright -->
+        <div class="container">
+            <div class="text-center py-3" style="font-size: 1.08rem;">
+                Copyright © 2025 Boxit Couriers | Powered by Boxit Couriers
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

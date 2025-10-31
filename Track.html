@@ -249,6 +249,23 @@
         </form>
     </div>
 
+     <script>
+        function trackNow(event) {
+            event.preventDefault();
+            var number = document.getElementById('trackInput').value.trim();
+            if (number) {
+
+                var url = 'https://wa.me/+919515404271'
+                window.open(url, '_blank');
+            } else {
+                alert("Please enter a tracking number.");
+            }
+        }
+        function resetTrack() {
+            document.getElementById('trackInput').value = '';
+        }
+    </script>
+
     <div class="map-image-wrap">
   <img src="16.png" alt="Global logistics map" class="map-img">
 </div>
@@ -351,3 +368,4 @@
 
 
 </html>
+

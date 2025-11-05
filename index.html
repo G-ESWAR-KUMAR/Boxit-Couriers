@@ -7,6 +7,8 @@
     <title>Boxit Couriers</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -15,7 +17,7 @@
             font-size: 2rem;
             color: #007bff !important;
             letter-spacing: 1px;
-            /* padding-right: 2rem; */
+
         }
 
         .navbar-nav .nav-link,
@@ -38,11 +40,18 @@
         .navbar-nav .dropdown-item:hover {
             color: #007bff !important;
         }
-   
+
+        @media (max-width: 991.98px) {
+            .navbar-brand span {
+                font-size: 1rem !important;
+
+            }
+        }
 
         .hero {
             background: url('https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
             height: 600px;
+            width: 100%;
             color: white;
             display: flex;
             align-items: center;
@@ -109,6 +118,531 @@
                 /* or even 0.9rem if needed */
             }
         }
+
+        .who-bg-hero {
+            width: 90vw;
+            max-width: 1500px;
+            margin: 35px auto;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 3px 45px 0 rgba(0, 0, 0, 0.09);
+            min-height: 390px;
+            aspect-ratio: 16/6;
+            background: #222;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+        }
+
+        .who-bg-hero-img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+        }
+
+        .who-bg-hero-mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(16, 23, 28, 0.89) 65%, rgba(16, 23, 28, 0.20) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .who-bg-hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 80px 60px 45px 50px;
+            width: 57%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .who-bg-hero h3 {
+            font-size: 2.05rem;
+            font-weight: 300;
+            margin: 0 0 6px 0;
+            color: #ffc72e;
+            letter-spacing: 1.5px;
+        }
+
+        .who-bg-hero h2 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            color: #fff;
+            letter-spacing: 0;
+        }
+
+        .who-bg-hero p {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #eee;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .who-bg-hero-content {
+                padding: 40px 25px 26px 18px;
+                width: 65%;
+            }
+
+            .who-bg-hero h3 {
+                font-size: 1.08rem;
+            }
+
+            .who-bg-hero h2 {
+                font-size: 1.4rem;
+            }
+
+            .who-bg-hero p {
+                font-size: 0.97rem;
+            }
+
+            .who-bg-hero-mask {
+                width: 90%;
+            }
+
+            .who-bg-hero-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .who-bg-hero {
+                min-height: 480px;
+            }
+
+            .who-bg-hero-content {
+                padding: 19vw 7vw 10vw 6vw;
+                width: 90%;
+            }
+
+            .who-bg-hero-mask {
+                width: 90%;
+            }
+        }
+
+        .Gallery {
+            display: flex;
+            flex-wrap: wrap;
+            /* allows items to wrap to a new line */
+            justify-content: center;
+            /* centers items horizontally */
+            gap: 100px;
+            /* optional spacing between items */
+        }
+
+        .Gallery iframe {
+            border-radius: 8px;
+            /* optional rounded corners */
+        }
+
+        @media (max-width: 991px) {
+            .Gallery {
+                margin: 50px !important;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .Gallery iframe {
+                border-radius: 8px;
+                /* optional rounded corners */
+            }
+        }
+
+        .custom-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px auto;
+            max-width: 1400px;
+        }
+
+        .custom-gallery-card {
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+
+        .custom-gallery-img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+
+        }
+
+        @media (max-width: 768px) {
+            .custom-gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .custom-gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 20px;
+            }
+        }
+
+        .boxit-contact-container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .boxit-contact-heading {
+            font-size: 5rem;
+            color: #d8dcdf;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: -48px;
+            text-transform: uppercase;
+            opacity: 0.35;
+        }
+
+        .boxit-contact-title {
+            font-size: 2rem;
+            color: #21262a;
+            font-weight: bold;
+            /* margin-bottom: 32px; */
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            .boxit-contact-heading {
+                font-size: 2.8rem !important;
+            }
+
+            .boxit-contact-container {
+                padding: 20px;
+                margin-top: 100px;
+                /* margin-bottom: 100px; */
+            }
+
+            .boxit-contact-heading {
+                font-size: 2rem;
+                /* margin-bottom: -35px; */
+            }
+
+            .boxit-contact-title {
+                font-size: 1.25rem;
+                /* margin-bottom: 15px; */
+            }
+        }
+
+        .features-section {
+            width: 100%;
+            background: #ffffff;
+            padding: 10px;
+            margin-bottom: 150px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 38px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px 28px 16px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 0 16px 28px 16px;
+            box-shadow: 0 7px 0 0 #1111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 5px solid #111;
+            min-height: 360px;
+            justify-content: flex-start;
+        }
+
+        .feature-icon {
+            width: 130px;
+            height: 130px;
+            margin: 36px 0 24px 0;
+        }
+
+        .feature-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e43d3d;
+            margin-bottom: 16px;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .feature-desc {
+            font-size: 1.16rem;
+            color: #222;
+            text-align: center;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+
+        }
+
+        @media (max-width: 920px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .feature-card {
+                min-height: 220px;
+                padding: 0 9px 18px 9px;
+            }
+
+            .feature-title {
+                font-size: 1.37rem;
+            }
+
+            .feature-desc {
+                font-size: 1rem;
+                text-align: justify;
+            }
+        }
+
+        .boxit-testimonials-brands {
+            display: flex;
+            margin: 60px;
+            background: #000;
+            color: #fff;
+            min-height: 440px;
+            border-radius: 0.3rem;
+            overflow: hidden;
+            box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.11);
+        }
+
+        .testimonials-slider {
+            width: 50%;
+            padding: 70px 45px 32px 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonial-head {
+            color: #ffc800;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin: 0 0 30px 0;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 3vw 0;
+            color: #fff;
+            text-align: justify;
+        }
+
+        .testimonial-author {
+            color: #ffc800;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .testimonial-slide {
+            display: none;
+            transition: opacity 0.19s;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-dots {
+            margin: 45px 0 0 0;
+        }
+
+        .testimonial-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: .3;
+            margin-right: 7px;
+            cursor: pointer;
+        }
+
+        .testimonial-dot.active {
+            background: #ffc800;
+            opacity: 1;
+        }
+
+        .testimonial-img-side {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+
+        .testimonial-img {
+            width: 97%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @media (max-width:900px) {
+            .boxit-testimonials-brands {
+                flex-direction: column;
+                min-height: 0;
+                margin: 20px;
+            }
+
+            .testimonials-slider,
+            .testimonial-img-side {
+                width: 100%;
+                padding: 34px 12px;
+            }
+
+            .testimonial-img {
+                width: 100%;
+                min-height: 170px;
+            }
+
+            .testimonial-text {
+
+                text-align: center;
+                padding: 5px;
+            }
+
+            .testimonial-author {
+                text-align: center;
+            }
+
+            .testimonial-slide h2 {
+                text-align: center;
+            }
+
+            .testimonial-dots {
+                text-align: center;
+            }
+        }
+
+        .brand-partners {
+            margin: 40px 0 0 0;
+            text-align: center;
+        }
+
+        .brands-title {
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 37px 0 22px 0;
+        }
+
+
+        .brands-slider-multi {
+            --slides-to-show: 4;
+            overflow: hidden;
+            width: 100%;
+            max-width: 870px;
+            margin: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 1px 7px rgba(20, 20, 40, .03);
+        }
+
+        .brands-track {
+            display: flex;
+            gap: 50px;
+            animation: brands-scroll 18s linear infinite;
+            align-items: center;
+        }
+
+        .brand-logo {
+            height: 72px;
+            width: auto;
+            flex: 0 0 auto;
+            transition: box-shadow 0.2s;
+            filter: grayscale(0.1);
+        }
+
+        @keyframes brands-scroll {
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Responsive: Reduce # of visible slides for mobile */
+        @media (max-width:900px) {
+            .brands-title {
+                font-size: 1.3rem;
+            }
+
+            .brands-slider-multi {
+                --slides-to-show: 2;
+                max-width: 99vw;
+            }
+
+            .brand-logo {
+                height: 40px;
+            }
+
+            .brands-track {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-size: cover !important;
+                transform: scale(1.15);
+                /* Zoom in the image by 15% */
+                transform-origin: center center;
+                transition: transform 0.6s ease;
+            }
+
+            .hero-section {
+                /* margin-top: 5px !important; */
+                height: auto !important;
+                min-height: 90vh;
+            }
+
+            #hero-title {
+                text-align: center;
+                font-size: 2rem !important;
+                margin-top: 250px;
+            }
+
+            #hero-desc {
+                text-align: center;
+                font-size: 1.1rem !important;
+            }
+
+            a.btn.btn-primary.btn-lg {
+                font-size: 1rem !important;
+                margin-top: 300px !important;
+                padding: 10px 20px !important;
+            }
+        }
     </style>
 </head>
 
@@ -130,51 +664,115 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav fw-semibold">
-                    <li class="nav-item"><a class="nav-link text-white  active" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white  active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="About.html">About</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="Services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="Track.html">Track Order</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="Gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="Contact.html">Contact</a></li>
-                   
+
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- WhatsApp Icon Fixed to Left -->
+    <a href="https://wa.me/919515404271" target="_blank" style="
+  position: fixed; 
+  bottom: 50%; 
+  left: 20px; 
+  transform: translateY(50%);
+  z-index: 9999; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 60px; height: 60px; 
+  background: #25D366; 
+  border-radius: 50%; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;">
+        <!-- WhatsApp Icon (Font Awesome or similar) -->
+        <i class="fab fa-whatsapp" style="color:#fff; font-size:28px;"></i>
+    </a>
+
+    <!-- <div class="who-bg-hero">
+        <img src="your-image.jpg" class="who-bg-hero-img" alt="Who We Are">
+        <div class="who-bg-hero-mask"></div>
+        <div class="who-bg-hero-content">
+            <h3>WHO WE ARE</h3>
+            <h2>Trusted by Millions, Delivered by us</h2>
+            <p>
+                At AirDart Express, we are more than just a courier company—we’re your trusted delivery partner. With
+                every pickup and drop-off, we bring relentless dedication, seamless technology, and global reach right
+                to your doorstep. Best Courier Services in Hyderabad
+            </p>
+        </div>
+    </div> -->
 
 
     <!-- Hero Section -->
-    <section class="hero-section position-relative mx-auto"
-        style="height: 80vh; max-width: 90vw; background: #16253a; border-radius:12px; overflow:hidden;margin-top: 10px;">
-        <div id="hero-bg" class="position-absolute top-0 start-0 w-100 h-100"
-            style="z-index:1; background-size: cover; background-position: center; transition: background-image 0.8s ease;">
+    <section class="hero-section" style="
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  background: #16253a;
+  overflow:hidden;
+  margin-top: 10px;
+  position: relative;">
+        <div id="hero-bg" class="hero-bg" style="
+      position: absolute; top:0; left:0;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      z-index: 1;
+      transition: background-image 0.8s ease;">
         </div>
-        <div class="container position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center text-white"
-            style="z-index:2;">
+        <div class="container position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center"
+            style="z-index:2; color:#ffffff ;">
             <h1 id="hero-title" class="fw-bold mb-3 display-4">Fast & Secure Delivery</h1>
             <p id="hero-desc" class="lead">Across India & Worldwide.</p>
-            <a href="#services" class="btn btn-primary btn-lg mt-3">Book Now</a>
+            <a href="tel:+919515404271" class="btn btn-primary btn-lg mt-3">Book Now</a>
         </div>
     </section>
+
 
     <script>
         const images = [
             {
-                img: "url('https://user-gen-media-assets.s3.amazonaws.com/seedream_images/ec37d148-1a12-42d9-a691-bc06b7cedeea.png')",
-                title: "Fast & Secure Delivery",
-                desc: "Across India & Worldwide."
+                img: "url('w-3.jpg')",
+                title: "Delivering Excellence, Worldwide",
+                desc: "Seamless international shipments with unmatched speed and precision. Trust Boxit Couriers to connect your business globally."
             },
             {
-                img: "url('1.png')",
-                title: "International Shipments",
-                desc: "Global reach with trusted partners."
+                img: "url('1.jpg')",
+                title: "Your Trusted Global Partner",
+                desc: "Powered by strong strategic alliances, we ensure your parcels reach every corner with care and reliability."
             },
             {
-                img: "url('2.png')",
-                title: "Real-Time Tracking",
-                desc: "Track your parcel anytime, anywhere."
+                img: "url('2.jpg')",
+                title: "Track Every Step Instantly",
+                desc: "Real-time visibility on your consignments—anytime, anywhere—for complete peace of mind with Boxit."
+            },
+            {
+                img: "url('w-2.jpg')",
+                title: "Delivering Excellence, Worldwide",
+                desc: "Seamless international shipments with unmatched speed and precision. Trust Boxit Couriers to connect your business globally."
+            },
+            {
+                img: "url('w-1.jpg')",
+                title: "Your Trusted Global Partner",
+                desc: "Powered by strong strategic alliances, we ensure your parcels reach every corner with care and reliability."
+            },
+            {
+                img: "url('w-4.jpg')",
+                title: "Track Every Step Instantly",
+                desc: "Real-time visibility on your consignments—anytime, anywhere—for complete peace of mind with Boxit."
             }
         ];
+
         let index = 0;
         function changeHero() {
             index = (index + 1) % images.length;
@@ -187,133 +785,308 @@
         document.getElementById('hero-bg').style.backgroundImage = images[0].img;
     </script>
 
+    <div class="who-bg-hero">
+        <img src="27.png" class="who-bg-hero-img" alt="Who We Are">
+        <div class="who-bg-hero-mask"></div>
+        <div class="who-bg-hero-content">
+            <h3>WHO WE ARE</h3>
+            <h2>Trusted by Thousands, Delivered with Care</h2>
+            <p>
+                At Boxit Couriers, we are more than just a delivery service—we are your reliable logistics partner.
+                Whether it’s local shipments or global deliveries, Boxit ensures every parcel is handled with precision,
+                speed, and a personal touch. Our commitment is to connect people, businesses, and communities with
+                seamless technology, dedicated support, and unmatched reliability—every step of the way.
+            </p>
+        </div>
+    </div>
+    <div class="brand-partners">
+        <div class="brands-title">GALLERY</div>
+    </div>
+    <div class="Gallery">
+        <iframe src="https://www.instagram.com/reel/DQMNJBik6Fd/embed" width="320" height="560" frameborder="0"
+            allowfullscreen scrolling="no"></iframe>
+        <iframe src="https://www.instagram.com/reel/DP6NYOhEVyN/embed" width="320" height="560" frameborder="0"
+            allowfullscreen scrolling="no"></iframe>
+        <iframe src="https://www.instagram.com/reel/DOa7yZgkxGT/embed" width="320" height="560" frameborder="0"
+            allowfullscreen scrolling="no"></iframe>
+        <!-- Add more iframes as needed -->
+        <iframe src="https://www.instagram.com/reel/DOI26vDEx0O/embed" width="320" height="560" frameborder="0"
+            allowfullscreen scrolling="no"></iframe>
+        <iframe src="https://www.instagram.com/reel/DMu2NvJR4wJ/embed" width="320" height="560" frameborder="0"
+            allowfullscreen scrolling="no"></iframe>
+        <iframe src="https://www.instagram.com/reel/DMUmp4FRwsS/embed" width="320" height="560" frameborder="0"
+            allowfullscreen scrolling="no"></iframe>
 
-    <!-- Services Section -->
-    <section id="services" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Services</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card">
-                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            class="card-img-top" alt="Domestic Delivery">
-                        <div class="card-body">
-                            <h5 class="card-title">Domestic Delivery</h5>
-                            <p class="card-text">Fast and secure delivery across India.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card">
-                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            class="card-img-top" alt="International Delivery">
-                        <div class="card-body">
-                            <h5 class="card-title">International Delivery</h5>
-                            <p class="card-text">Global reach with reliable partners.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card">
-                        <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            class="card-img-top" alt="Express Delivery">
-                        <div class="card-body">
-                            <h5 class="card-title">Express Delivery</h5>
-                            <p class="card-text">Same-day and next-day delivery options.</p>
-                        </div>
-                    </div>
-                </div>
+    </div><br><br>
+    <div class="brand-partners">
+        <div class="brands-title">OUR PARTNERS</div>
+    </div>
+
+    <div class="custom-gallery-grid">
+        <div class="custom-gallery-card">
+            <img class="custom-gallery-img" src="18.jpg" alt="Gallery Image 1">
+        </div>
+        <div class="custom-gallery-card">
+            <img class="custom-gallery-img" src="19.jpeg" alt="Gallery Image 2">
+        </div>
+        <div class="custom-gallery-card">
+            <img class="custom-gallery-img" src="20.jpeg" alt="Gallery Image 3">
+        </div>
+        <div class="custom-gallery-card">
+            <img class="custom-gallery-img" src="21.jpeg" alt="Gallery Image 4">
+        </div>
+        <div class="custom-gallery-card">
+            <img class="custom-gallery-img" src="22.png" alt="Gallery Image 5">
+        </div>
+        <div class="custom-gallery-card">
+            <img class="custom-gallery-img" src="23.jpeg" alt="Gallery Image 6">
+        </div>
+        <div class="custom-gallery-card">
+            <img class="custom-gallery-img" src="24.jpg" alt="Gallery Image 7">
+        </div>
+        <div class="custom-gallery-card">
+            <img class="custom-gallery-img" src="25.jpg" alt="Gallery Image 8">
+        </div>
+    </div>
+
+
+    <div class="boxit-contact-container">
+        <div class="boxit-contact-heading">WHAT WE DO</div>
+        <div class="boxit-contact-title">OUR SERVICES</div>
+    </div>
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="28.png" alt="Air Freight" class="feature-icon">
+                <h3 class="feature-title">Air Freight</h3>
+                <p class="feature-desc">
+                    Swift, reliable air cargo services ensuring safe and timely delivery worldwide. Boxit Couriers
+                    partners with top airlines to meet your urgent and bulk shipment needs with cost-effective
+                    solutions.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="13.png" alt="Express Delivery" class="feature-icon">
+                <h3 class="feature-title">Express Delivery</h3>
+                <p class="feature-desc">
+                    Fast and dependable door-to-door parcel delivery backed by robust logistics networks. Boxit Couriers
+                    guarantees real-time tracking and customer-first support to keep your business moving.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="29.png" alt="Sea Cargo" class="feature-icon" style="width: 80%; height: 50%;">
+                <h3 class="feature-title">Sea Cargo</h3>
+                <p class="feature-desc">
+                    Comprehensive sea freight forwarding tailored for large volume and special size shipments. Boxit
+                    Couriers coordinates safe transport and customs management for global ocean freight needs.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Tracking Section -->
-    <section id="track" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Track Your Parcel</h2>
-            <form class="row g-3">
-                <div class="col-md-6 offset-md-3">
-                    <label for="trackingId" class="form-label">Enter Tracking ID</label>
-                    <input type="text" class="form-control" id="trackingId" placeholder="Enter your tracking ID">
-                </div>
-                <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-primary">Track</button>
-                </div>
-            </form>
-        </div>
-    </section>
+    <div class="boxit-testimonials-brands">
+        <div class="testimonials-slider" id="boxit-testimonials-slider">
+            <div class="testimonial-slide active">
+                <h2 class="testimonial-head">Testimonials</h2>
+                <p class="testimonial-text">
+                    They are friendly and knowledgeable staff have always been readily available to answer any queries
+                    or concerns I may have had. They handle each interaction with efficiency and courtesy, making me
+                    feel valued as a customer.
+                </p>
+                <div class="testimonial-author">Praveena</div>
+            </div>
+            <div class="testimonial-slide">
+                <h2 class="testimonial-head">Testimonials</h2>
+                <p class="testimonial-text">
+                    Really impressed with Boxit Couriers! My parcel arrived before the promised time and the tracking
+                    was spot on.<br />Thanks for great service!
+                </p>
+                <div class="testimonial-author">Rahul Kumar</div>
+            </div>
+            <div class="testimonial-slide">
+                <h2 class="testimonial-head">Testimonials</h2>
+                <p class="testimonial-text">
+                    Excellent courier services! Their pickup was prompt and the staff helped pack my package securely.
+                    The delivery was on time and my documents arrived safely.
+                </p>
+                <div class="testimonial-author">S. Ravi</div>
+            </div>
+            <div class="testimonial-slide">
+                <h2 class="testimonial-head">Testimonials</h2>
+                <p class="testimonial-text">
+                    Boxit's international shipping made it easy to send gifts to my family overseas. Affordable rates
+                    and regular updates gave me complete peace of mind.
+                </p>
+                <div class="testimonial-author">Meghana P</div>
+            </div>
+            <div class="testimonial-slide">
+                <h2 class="testimonial-head">Testimonials</h2>
+                <p class="testimonial-text">
+                    The best courier service I’ve used so far. The staff was polite, and all my queries were answered
+                    instantly on WhatsApp. Highly recommended for hassle-free shipping!
+                </p>
+                <div class="testimonial-author">Anand T.</div>
+            </div>
+            <div class="testimonial-slide">
+                <h2 class="testimonial-head">Testimonials</h2>
+                <p class="testimonial-text">
+                    Fast, safe, and secure! The Boxit Couriers team packed and shipped my electronics perfectly. Will
+                    definitely use their express delivery again.
+                </p>
+                <div class="testimonial-author">Kiran M.</div>
+            </div>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Gallery</h2>
-            <div class="row gallery">
-                <div class="col-md-4 mb-4">
-                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                        alt="Courier Van">
-                </div>
-                <div class="col-md-4 mb-4">
-                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                        alt="Courier Team">
-                </div>
-                <div class="col-md-4 mb-4">
-                    <img src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                        alt="Parcel Sorting">
-                </div>
+            <!-- Add more .testimonial-slide divs as needed -->
+            <div class="testimonial-dots" id="testimonial-dots"></div>
+        </div>
+        <div class="testimonial-img-side">
+            <img src="30.jpeg" alt="Happy Customer" class="testimonial-img">
+        </div>
+    </div>
+
+    <div class="brand-partners">
+        <div class="brands-title">OUR BRAND PARTNERS</div>
+        <div class="brands-slider-multi" id="brands-slider-multi">
+            <div class="brands-track">
+                <img class="brand-logo" src="31.jpg" alt="FedEx">
+                <img class="brand-logo" src="32.jpg" alt="dpd">
+                <img class="brand-logo" src="33.jpg" alt="DPEX">
+                <img class="brand-logo" src="34.png" alt="Brand4">
+                <img class="brand-logo" src="35.png" alt="Brand4">
+                <img class="brand-logo" src="36.jpg" alt="Brand4">
+                <!-- Add more logos as needed -->
             </div>
         </div>
-    </section>
+        <div class="brand-dots" id="brand-dots"></div>
+    </div>
 
-    <!-- Video Section -->
-    <section id="video" class="video-section">
-        <div class="container text-center">
-            <h2>How We Work</h2>
-            <video controls>
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </section>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Duplicate logos to create infinite loop effect
+            let track = document.querySelector('.brands-track');
+            track.innerHTML += track.innerHTML;
+        });
+        /* Testimonials slider logic */
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const testimonialDotsContainer = document.getElementById('testimonial-dots');
+        testimonials.forEach((_, i) => {
+            let dot = document.createElement('span');
+            dot.className = "testimonial-dot" + (i === 0 ? " active" : "");
+            dot.onclick = () => showTestimonial(i);
+            testimonialDotsContainer.appendChild(dot);
+        });
+        let testimonialIndex = 0, testimonialInterval;
+        function showTestimonial(idx) {
+            testimonials.forEach((t, i) => { t.classList.toggle('active', i === idx); testimonialDotsContainer.children[i].classList.toggle('active', i === idx); });
+            testimonialIndex = idx;
+        }
+        function nextTestimonial() { showTestimonial((testimonialIndex + 1) % testimonials.length); }
+        testimonialInterval = setInterval(nextTestimonial, 4000);
+
+        /* Brand partners slider logic */
+        const brands = document.querySelectorAll('.brand-logo');
+        const brandDotsContainer = document.getElementById('brand-dots');
+        brands.forEach((_, i) => {
+            let dot = document.createElement('span');
+            dot.className = "brand-dot" + (i === 0 ? " active" : "");
+            dot.onclick = () => showBrand(i);
+            brandDotsContainer.appendChild(dot);
+        });
+        let brandIndex = 0, brandInterval;
+        function showBrand(idx) {
+            brands.forEach((b, i) => { b.classList.toggle('active', i === idx); brandDotsContainer.children[i].classList.toggle('active', i === idx); });
+            brandIndex = idx;
+        }
+        function nextBrand() { showBrand((brandIndex + 1) % brands.length); }
+        brandInterval = setInterval(nextBrand, 2300);
+    </script>
+
+    <div class="brand-partners">
+        <div class="brands-title">CONTACT US</div>
+    </div>
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Us</h2>
+
             <div class="row">
                 <div class="col-md-6">
-                    <form>
+                    <form id="contactForm">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
                 </div>
                 <div class="col-md-6">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1800000000003!2d78.474321!3d17.438000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b6b4a06cd6bb!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61205.0471861483!2d80.64488429999999!3d16.5101648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35eff9482d944b%3A0x939b7e84ab4a0265!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1762314120556!5m2!1sen!2sin"
                         width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return re.test(String(email).toLowerCase());
+        }
 
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // prevent normal form submission
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name) {
+                alert('Please enter your name.');
+                return;
+            }
+
+            if (!email) {
+                alert('Please enter your email.');
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (!message) {
+                alert('Please enter your message.');
+                return;
+            }
+
+            // If all validations pass, open mailto:
+            const subject = encodeURIComponent(name);
+            const body = encodeURIComponent(message);
+            const mailtoLink = `mailto:boxitcouriers@gmail.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+        });
+    </script>
     <!-- FOOTER START -->
-   <footer style="background: #000; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin-top: 40px;">
+    <footer style="background: #000; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin-top: 40px;">
         <!-- Top banner -->
         <div style="background: #ffc107;">
             <div class="container text-center py-3">
                 <span style="font-weight: bold; font-size: 1.5rem; color: #222;">
-                    Call us for Courier Services <a href="tel:+919515404271" style="color: inherit; text-decoration: underline;">+91 95154
-                                04271</a>
+                    Call us for Courier Services <a href="tel:+919515404271"
+                        style="color: inherit; text-decoration: underline;">+91 95154
+                        04271</a>
                 </span>
             </div>
         </div>
@@ -330,7 +1103,7 @@
                 <div class="col-md-3 mb-4 mb-md-0">
                     <h4 style="font-weight: bold;">Quick Links</h4>
                     <ul class="list-unstyled" style="margin-top: 12px;">
-                        <li><a href="Home.html" style="color:#fff;text-decoration:none;">Home</a></li>
+                        <li><a href="index.html" style="color:#fff;text-decoration:none;">Home</a></li>
                         <li><a href="About.html" style="color:#fff;text-decoration:none;">About</a></li>
                         <li><a href="Services.html" style="color:#fff;text-decoration:none;">Services</a></li>
                         <li><a href="Track.html" style="color:#fff;text-decoration:none;">Track Order</a></li>
@@ -343,7 +1116,7 @@
                 <div class="col-md-3 mb-4 mb-md-0">
                     <h4 style="font-weight: bold;">Contact us</h4>
                     <ul class="list-unstyled mt-3" style="font-size: 1.05rem;">
-                        
+
                         <li>
                             <i class="fas fa-phone-alt" style="color:#ffc107;"></i>
                             <a href="tel:+919515404271" style="color: inherit; text-decoration: underline;">+91 95154
@@ -380,7 +1153,7 @@
                             style="background:#ffc107;padding:10px 14px;border-radius:7px;margin-right:7px;color:#111;display:inline-block;">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/9515404271" target="_blank"
+                        <a href="https://wa.me/919515404271" target="_blank"
                             style="background:#ffc107;padding:10px 14px;border-radius:7px;margin-right:7px;color:#111;display:inline-block;">
                             <i class="fab fa-whatsapp"></i>
                         </a>
